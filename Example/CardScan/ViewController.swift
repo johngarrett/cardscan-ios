@@ -49,6 +49,7 @@ class ViewController: UIViewController, ScanDelegate, ScanStringsDataSource, Tes
         let vc = storyboard.instantiateViewController(withIdentifier: "results") as! ResultViewController
         vc.scanStats = scanViewController.getScanStats()
         vc.number = creditCard.number
+        vc.expirationDate = "\(creditCard.expiryMonth ?? "")/\(creditCard.expiryYear ?? "")"
         vc.cardImage = creditCard.image
         
         self.dismiss(animated: true)
